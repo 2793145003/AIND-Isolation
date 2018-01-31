@@ -122,15 +122,13 @@
 这个过程会创建一个压缩文件 `isolation-<id>.zip`。提交该文件即可。
 
 
-## Game Visualization
+## 游戏可视化
 
-The `isoviz` folder contains a modified version of chessboard.js that can animate games played on a 7x7 board.  In order to use the board, you must run a local webserver by running `python -m http.server 8000` from your project directory (you can replace 8000 with another port number if that one is unavailable), then open your browser to `http://localhost:8000` and navigate to the `/isoviz/display.html` page.  Enter the move history of an isolation match (i.e., the array returned by the Board.play() method) into the text area and run the match.  Refresh the page to run a different game.  (Feel free to submit pull requests with improvements to isoviz.)
+`isoviz` 文件夹包含一个 7x7 游戏棋盘。从项目目录运行 `python -m http.server 8000` 来使用该棋盘 (可将 8000 替换为其他数字), 然后从浏览器进入 `http://localhost:8000` 并进入 `/isoviz/display.html` 页面。输入移动历史 (即 Board.play() 方法返回的数组) 并执行比赛。刷新页面来执行不同的游戏。
 
 
-## PvP Competition
+## PvP 竞赛
 
-Once your project has been reviewed and accepted by meeting all requirements of the rubric, you are invited to complete the `competition_agent.py` file using any combination of techniques and improvements from lectures or online, and then submit it to compete in a tournament against other students from your cohort and past cohort champions.  Additional details (official rules, submission deadline, etc.) will be provided separately.
-
-The competition agent can be submitted using the Udacity project assistant:
+编写 `competition_agent.py` 并运行 :
 
     udacity submit isolation-pvp
