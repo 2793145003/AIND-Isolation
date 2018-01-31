@@ -27,60 +27,58 @@
 - `custom_score_2()`: 位置评价算法
 - `custom_score_3()`: 位置评价算法
 
-You may write or modify code within each file (but you must maintain compatibility with the function signatures provided).  You may add other classes, functions, etc., as needed, but it is not required.
-
-The Project Assistant sandbox for this project places some restrictions on the modules available and blocks calls to some of the standard library functions.  In general, standard library functions that introspect code running in the sandbox are blocked, and the PA only allows the following modules `random`, `numpy`, `scipy`, `sklearn`, `itertools`, `math`, `heapq`, `collections`, `array`, `copy`, and `operator`. (Modules within these packages are also allowed, e.g., `numpy.random`.)
+允许的模块有： `random`, `numpy`, `scipy`, `sklearn`, `itertools`, `math`, `heapq`, `collections`, `array`, `copy`, 和 `operator`. (模块中的内容也可以随意使用, 如 `numpy.random`.)
 
 
-### Quickstart Guide
+### 快速指南
 
-The following example creates a game and illustrates the basic API.  You can run this example by activating your aind anaconda environment and executing the command `python sample_players.py`
+以下是一个游戏示例，可以通过 `python sample_players.py` 运行。
 
     from isolation import Board
     from sample_players import RandomPlayer
     from sample_players import GreedyPlayer
 
-    # create an isolation board (by default 7x7)
+    # 创建游戏面板 (默认 7x7)
     player1 = RandomPlayer()
     player2 = GreedyPlayer()
     game = Board(player1, player2)
 
-    # place player 1 on the board at row 2, column 3, then place player 2 on
-    # the board at row 0, column 5; display the resulting board state.  Note
-    # that the .apply_move() method changes the calling object in-place.
+    # 玩家 1 落子 2 行 3 列，玩家 2 落子 0 行 5 列
+    # 显示棋盘
+    # .apply_move() 方法决定位置
     game.apply_move((2, 3))
     game.apply_move((0, 5))
     print(game.to_string())
 
-    # players take turns moving on the board, so player1 should be next to move
+    # 玩家轮流走子，所以下一个应该是玩家 1
     assert(player1 == game.active_player)
 
-    # get a list of the legal moves available to the active player
+    # 获得玩家可选的行动列表
     print(game.get_legal_moves())
 
-    # get a successor of the current state by making a copy of the board and
-    # applying a move. Notice that this does NOT change the calling object
-    # (unlike .apply_move()).
+    # 获得一个走了一步棋之后的棋盘副本
+    # 并不会改变当前对象
+    # (而不是像 .apply_move() 那样).
     new_game = game.forecast_move((1, 1))
     assert(new_game.to_string() != game.to_string())
     print("\nOld state:\n{}".format(game.to_string()))
     print("\nNew state:\n{}".format(new_game.to_string()))
 
-    # play the remainder of the game automatically -- outcome can be "illegal
-    # move", "timeout", or "forfeit"
+    # 自动完成游戏
+    # 输出 "illegalmove", "timeout", 或 "forfeit"
     winner, history, outcome = game.play()
     print("\nWinner: {}\nOutcome: {}".format(winner, outcome))
     print(game.to_string())
     print("Move history:\n{!s}".format(history))
 
 
-### Coding
+### 编码
 
-The steps below outline a suggested process for completing the project -- however, this is just a suggestion to help you get started.
+建议按以下步骤完成本项目。
 
-A stub for writing unit tests is provided in the [`test_game_agent.py`](tests/test_game_agent.py) file (no local test cases are provided). In order to run your tests, execute `python -m unittest` command (See the [unittest](https://docs.python.org/3/library/unittest.html#basic-example) module for information on getting started.)
+单元测试在 [`test_game_agent.py`](tests/test_game_agent.py) 文件中。执行 `python -m unittest` 命令来进行测试 (具体参考 [unittest](https://docs.python.org/3/library/unittest.html#basic-example) )
 
-The primary mechanism for testing your code will be the Udacity Project Assistant command line utility.  You can install the Udacity-PA tool by activating your aind anaconda environment, then running `pip install udacity-pa`.  You can submit your code for scoring by running `udacity submit isolation`.  The project assistant server has a collection of unit tests that it will execute on your code, and it will provide feedback on any successes or failures.  You must pass all test cases in the project assistant before you can complete the project by submitting your report for review.
+运行 `pip install udacity-pa`，并使用 `udacity submit isolation` 进行提交。在提交报告前要确保通过了所有的单元测试。
 
 0. Verify that the Udacity-PA tool is installed properly by submitting the project. Run `udacity submit isolation`. (You should see a list of test cases that failed -- that's expected because you haven't implemented any code yet.)
 
