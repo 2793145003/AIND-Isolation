@@ -80,21 +80,21 @@
 
 运行 `pip install udacity-pa`，并使用 `udacity submit isolation` 进行提交。在提交报告前要确保通过了所有的单元测试。
 
-0. Verify that the Udacity-PA tool is installed properly by submitting the project. Run `udacity submit isolation`. (You should see a list of test cases that failed -- that's expected because you haven't implemented any code yet.)
+0. 运行 `udacity submit isolation`。(会看到测试失败的用例 -- 因为还没有开始编写)
 
-0. Modify the `MinimaxPlayer.minimax()` method to return any legal move for the active player.  Resubmit your code to the project assistant and the minimax interface test should pass.
+0. 编写 `MinimaxPlayer.minimax()` 方法使其返回当前玩家可用的移动，并再次提交代码来通过 minimax 测试。
 
-0. Further modify the `MinimaxPlayer.minimax()` method to implement the full recursive search procedure described in lecture (ref. [AIMA Minimax Decision](https://github.com/aimacode/aima-pseudocode/blob/master/md/Minimax-Decision.md)).  Resubmit your code to the project assistant and both the minimax interface and functional test cases will pass.
+0. 继续编写 `MinimaxPlayer.minimax()` 实现递归搜索 (参考 [AIMA Minimax Decision](https://github.com/aimacode/aima-pseudocode/blob/master/md/Minimax-Decision.md)).  再次提交代码，通过 minimax 和方法测试用例。
 
-0. Start on the alpha beta test cases. Modify the `AlphaBetaPlayer.alphabeta()` method to return any legal move for the active player.  Resubmit your code to the project assistant and the alphabeta interface test should pass.
+0. 然后是 alpha beta 测试用例。编写 `AlphaBetaPlayer.alphabeta()` 方法使其返回当前玩家可用的移动，并再次提交代码来通过 alphabeta 测试。
 
-0. Further modify the `AlphaBetaPlayer.alphabeta()` method to implement the full recursive search procedure described in lecture (ref. [AIMA Alpha-Beta Search](https://github.com/aimacode/aima-pseudocode/blob/master/md/Alpha-Beta-Search.md)).  Resubmit your code to the project assistant and both the alphabeta interface and functional test cases will pass.
+0. 继续编写 `AlphaBetaPlayer.alphabeta()` 实现递归搜索 (参考 [AIMA Alpha-Beta Search](https://github.com/aimacode/aima-pseudocode/blob/master/md/Alpha-Beta-Search.md)).  再次提交代码，通过 alphabeta 和方法测试用例。
 
-0. You can pass the interface test for the `AlphaBetaPlayer.get_move()` function by copying the code from `MinimaxPlayer.get_move()`.  Resubmit your code to the project assistant to see that the `get_move()` interface test case passes.
+0. 从 `MinimaxPlayer.get_move()` 中复制代码通过 `AlphaBetaPlayer.get_move()` 测试。再次提交代码，通过 `get_move()` 测试用例。
 
-0. Pass the test_get_move test by modifying `AlphaBetaPlayer.get_move()` to implement Iterative Deepening.  See Also [AIMA Iterative Deepening Search](https://github.com/aimacode/aima-pseudocode/blob/master/md/Iterative-Deepening-Search.md)
+0. 编写 `AlphaBetaPlayer.get_move()` Iterative Deepening 通过 test_get_move 测试。参考 [AIMA Iterative Deepening Search](https://github.com/aimacode/aima-pseudocode/blob/master/md/Iterative-Deepening-Search.md)
 
-0. Finally, pass the heuristic tests by implementing any heuristic in `custom_score()`, `custom_score_2()`, and `custom_score_3()`.  (These test cases only validate the return value type -- it does not check for "correctness" of your heuristic.)  You can see example heuristics in the `sample_players.py` file.
+0. 最后，在 `custom_score()`, `custom_score_2()`, 和 `custom_score_3()` 任意一个中添加启发，通过 heuristic 测试 (测试用例只关注类型，而不会关注是否正确)  可以在 `sample_players.py` 文件中看到示例。
 
 
 ### Tournament
