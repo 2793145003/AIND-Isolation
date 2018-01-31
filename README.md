@@ -33,7 +33,7 @@
 ### 快速指南
 
 以下是一个游戏示例，可以通过 `python sample_players.py` 运行。
-
+```
     from isolation import Board
     from sample_players import RandomPlayer
     from sample_players import GreedyPlayer
@@ -70,7 +70,7 @@
     print("\nWinner: {}\nOutcome: {}".format(winner, outcome))
     print(game.to_string())
     print("Move history:\n{!s}".format(history))
-
+```
 
 ### 编码
 
