@@ -97,15 +97,15 @@
 0. 最后，在 `custom_score()`, `custom_score_2()`, 和 `custom_score_3()` 任意一个中添加启发，通过 heuristic 测试 (测试用例只关注类型，而不会关注是否正确)  可以在 `sample_players.py` 文件中看到示例。
 
 
-### Tournament
+### 竞赛
 
-The `tournament.py` script is used to evaluate the effectiveness of your custom heuristics.  The script measures relative performance of your agent (named "Student" in the tournament) in a round-robin tournament against several other pre-defined agents.  The Student agent uses time-limited Iterative Deepening along with your custom heuristics.
+`tournament.py` 脚本用来评价启发的有效程度。
 
-The performance of time-limited iterative deepening search is hardware dependent (faster hardware is expected to search deeper than slower hardware in the same amount of time).  The script controls for these effects by also measuring the baseline performance of an agent called "ID_Improved" that uses Iterative Deepening and the improved_score heuristic defined in `sample_players.py`.  Your goal is to develop a heuristic such that Student outperforms ID_Improved. (NOTE: This can be _very_ challenging!)
+有时限的搜索的表现和硬件相关。尝试开发一种优于 ID_Improved 的启发。
 
-The tournament opponents are listed below. (See also: sample heuristics and players defined in sample_players.py)
+标准如下： (参考 `sample_players.py`)
 
-- Random: An agent that randomly chooses a move each turn.
+- Random: 随机
 - MM_Open: MinimaxPlayer agent using the open_move_score heuristic with search depth 3
 - MM_Center: MinimaxPlayer agent using the center_score heuristic with search depth 3
 - MM_Improved: MinimaxPlayer agent using the improved_score heuristic with search depth 3
@@ -113,15 +113,13 @@ The tournament opponents are listed below. (See also: sample heuristics and play
 - AB_Center: AlphaBetaPlayer using iterative deepening alpha-beta search and the center_score heuristic
 - AB_Improved: AlphaBetaPlayer using iterative deepening alpha-beta search and the improved_score heuristic
 
-## Submission
+## 提交
 
-Before submitting your solution to a reviewer, you are required to submit your project to Udacity's Project Assistant, which will provide some initial feedback.
+参考 [AIND-Sudoku](https://github.com/udacity/AIND-Sudoku#submission) 
 
-Please see the instructions in the [AIND-Sudoku](https://github.com/udacity/AIND-Sudoku#submission) project repository for installation and setup instructions. 
+在项目路径运行 `udacity submit isolation`。输入用户名与密码。如果使用谷歌或脸书登录，参考 [instructions for using a jwt](https://project-assistant.udacity.com/faq).
 
-To submit your code to the project assistant, run `udacity submit isolation` from within the top-level directory of this project. You will be prompted for a username and password. If you login using google or facebook, follow the [instructions for using a jwt](https://project-assistant.udacity.com/faq).
-
-This process will create a zipfile in your top-level directory named `isolation-<id>.zip`. This is the file that you should submit to the Udacity reviews system.
+这个过程会创建一个压缩文件 `isolation-<id>.zip`。提交该文件即可。
 
 
 ## Game Visualization
