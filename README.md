@@ -20,12 +20,12 @@
 
 要编写的代码如下：
 
-- `MinimaxPlayer.minimax()`: implement minimax search
-- `AlphaBetaPlayer.alphabeta()`: implement minimax search with alpha-beta pruning
-- `AlphaBetaPlayer.get_move()`: implement iterative deepening search
-- `custom_score()`: implement your own best position evaluation heuristic
-- `custom_score_2()`: implement your own alternate position evaluation heuristic
-- `custom_score_3()`: implement your own alternate position evaluation heuristic
+- `MinimaxPlayer.minimax()`: minimax 搜索
+- `AlphaBetaPlayer.alphabeta()`: 带有 alpha-beta 剪枝的 minimax 搜索
+- `AlphaBetaPlayer.get_move()`: 搜索迭代深化过程
+- `custom_score()`: 最佳位置评价算法
+- `custom_score_2()`: 位置评价算法
+- `custom_score_3()`: 位置评价算法
 
 You may write or modify code within each file (but you must maintain compatibility with the function signatures provided).  You may add other classes, functions, etc., as needed, but it is not required.
 
