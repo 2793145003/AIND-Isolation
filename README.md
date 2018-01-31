@@ -1,24 +1,24 @@
 
-# Build a Game-playing Agent
+# 制作一个游戏 Agent
 
 ![Example game of isolation](viz.gif)
 
-## Synopsis
+## 概要
 
-In this project, students will develop an adversarial search agent to play the game "Isolation".  Isolation is a deterministic, two-player game of perfect information in which the players alternate turns moving a single piece from one cell to another on a board.  Whenever either player occupies a cell, that cell becomes blocked for the remainder of the game.  The first player with no remaining legal moves loses, and the opponent is declared the winner.  These rules are implemented in the `isolation.Board` class provided in the repository. 
+在这个项目中，我们将要开发一个 Agent 来玩一个叫做“孤立（Isolation）”的游戏。孤立是一个二人零和对抗性游戏，两名玩家交替走子，将棋子从棋盘上的一个格子移到另一个格子。当某个格子被玩家占据后，该格子即被锁定。最先无法移动的玩家算输，由另一位玩家取胜。这些规则被写在 `isolation.Board` 类中。
 
-This project uses a version of Isolation where each agent is restricted to L-shaped movements (like a knight in chess) on a rectangular grid (like a chess or checkerboard).  The agents can move to any open cell on the board that is 2-rows and 1-column or 2-columns and 1-row away from their current position on the board. Movements are blocked at the edges of the board (the board does not wrap around), however, the player can "jump" blocked or occupied spaces (just like a knight in chess).
+在本项目中，每个 Agent 只能采取日字形的移动方式（如象棋中的马），即每次需移动 2 行 1 列或 1 行 2 列。移动可以跳过其他棋子，但不能超出棋盘边界。
 
-Additionally, agents will have a fixed time limit each turn to search for the best move and respond.  If the time limit expires during a player's turn, that player forfeits the match, and the opponent wins.
+另外，每一步都存在时间限制，若超出了时间限制则对手获胜。
 
-Students only need to modify code in the `game_agent.py` file to complete the project.  Additional files include example Player and evaluation functions, the game board class, and a template to develop local unit tests.  
+需要编写的代码在 `game_agent.py` 中。其他文件中则包含玩家示例与评价函数、棋盘函数、和本地单元测试模板。
 
 
-## Instructions
+## 指引
 
-In order to complete the Isolation project, students must submit code that passes all test cases for the required functions in `game_agent.py` and complete a report as specified in the rubric.  Students can submit using the [Udacity Project Assistant]() command line utility.  Students will receive feedback on test case success/failure after each submission.
+在 `game_agent.py` 中编写代码使其通过所有测试样例，并提交相应报告。代码可以通过 [Udacity Project Assistant]() 提交。在提交后，可以收到测试样例的 success/failure 的反馈。
 
-Students must implement the following functions:
+要编写的代码如下：
 
 - `MinimaxPlayer.minimax()`: implement minimax search
 - `AlphaBetaPlayer.alphabeta()`: implement minimax search with alpha-beta pruning
